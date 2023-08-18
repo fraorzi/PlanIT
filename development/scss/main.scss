@@ -1,0 +1,23 @@
+@import "base/reset";
+@import "utils/colors";
+@import "utils/mixins";
+@import "components/footer";
+@import "components/header";
+@import "components/meallist";
+@import "components/tasklist";
+@import "components/sidebar";
+
+body.light-mode {
+  background-color: $light-background;
+   color: $light-text;
+}
+
+body.dark-mode {
+  background-color: $dark-background;
+   color: $dark-text;
+}
+.fixed-header {
+  color: #000;  // Tu możesz ustawić konkretny kolor dla tekstu w nagłówku
+}
+
+
