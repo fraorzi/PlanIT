@@ -6,26 +6,20 @@
 @import "components/meallist";
 @import "components/tasklist";
 @import "components/sidebar";
+@import "components/day";
 
 body.light-mode {
   background-color: $light-background;
-   color: $light-text;
+  color: $light-text;
 }
 
 body.dark-mode {
   background-color: $dark-background;
-   color: $dark-text;
+  color: $dark-text;
 }
 .fixed-header {
-  color: #000;
+  color: #000;  // Tu możesz ustawić konkretny kolor dla tekstu w nagłówku
 }
-
-.content-container {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-}
-
 
 
 

@@ -1,10 +1,11 @@
 import React from 'react';
 
-function Sidebar({ onTaskToggle, onMealToggle }) {
+function Sidebar({ onSectionToggle, activeSection }) {
     return (
         <div className="sidebar">
-            <button onClick={onTaskToggle}>Zadania</button>
-            <button onClick={onMealToggle}>Posiłki</button>
+            <button onClick={() => onSectionToggle(activeSection === "none" ? "both" : "none")}>
+                {activeSection === "none" ? "Pokaż wszystko" : "Ukryj wszystko"}
+            </button>
         </div>
     );
 }
