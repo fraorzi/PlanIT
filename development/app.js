@@ -14,9 +14,13 @@ function App() {
     return (
         <div>
             <Header darkMode={darkMode} setDarkMode={setDarkMode} />
-            <Sidebar onTaskToggle={() => setShowTasks(prev => !prev)} onMealToggle={() => setShowMeals(prev => !prev)} />
-            {showTasks && <TaskList />}
-            {showMeals && <MealList />}
+            <div className="main-container">
+                <Sidebar onTaskToggle={() => setShowTasks(prev => !prev)} onMealToggle={() => setShowMeals(prev => !prev)} />
+                <div className="content-container">
+                    {showTasks && <TaskList />}
+                    {showMeals && <MealList />}
+                </div>
+            </div>
             <Footer />
         </div>
     );

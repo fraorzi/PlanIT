@@ -20,6 +20,12 @@ body.dark-mode {
   color: #000;  // Tu możesz ustawić konkretny kolor dla tekstu w nagłówku
 }
 
+.content-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
 
 
 
