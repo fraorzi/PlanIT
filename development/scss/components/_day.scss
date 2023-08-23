@@ -1,28 +1,80 @@
 .day-component {
-  margin-top: 20%;
-  width: 50%;
-  margin-left: 30%;
-}
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f4f4f4;
+  max-width: 100%;
+  margin-top: 400px;
+  margin-left: 300px;
+  margin-right: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-
-  th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
+  .navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
   }
-
-  th {
-    background-color: #f2f2f2;
-  }
-
-  tbody tr:hover {
-    background-color: #f5f5f5;
-  }
-
-  td {
+  button {
+    padding: 5px 15px;
+    margin: 5px;
+    border: none;
+    background-color: #8a2be2;
+    color: white;
+    border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken(#8a2be2, 10%);
+    }
+  }
+
+  h2 {
+    margin: 20px 0;
+    font-size: 28px;  /* Zwiększona wielkość czcionki */
+    font-weight: bold;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    thead {
+      background-color: darken(#f5f5f5, 5%);
+
+      th {
+        padding: 10px;
+        border: 1px solid #ccc;
+
+        &:first-child {
+          width: 80px;  /* Stała szerokość dla komórki z godzinami */
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        &:hover {
+          background-color: lighten(#8a2be2, 40%);
+        }
+
+        td {
+          padding: 10px;
+          border: 1px solid #ccc;
+          cursor: pointer;
+
+          &:first-child {
+            text-align: center;       /* Wyśrodkowanie tekstu w poziomie */
+            vertical-align: middle;   /* Wyśrodkowanie tekstu w pionie */
+          }
+
+          &:hover {
+            background-color: lighten(#8a2be2, 30%);
+          }
+        }
+      }
+    }
   }
 }

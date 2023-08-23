@@ -6,8 +6,10 @@ function DayComponent({ tasks, meals, addTask, addMeal }) {
 
     return (
         <div className="day-component">
-            <button onClick={() => setCurrentDay(prevDay => new Date(prevDay.setDate(prevDay.getDate() - 1)))}>Poprzedni dzień</button>
-            <button onClick={() => setCurrentDay(prevDay => new Date(prevDay.setDate(prevDay.getDate() + 1)))}>Następny dzień</button>
+            <div className="navigation-buttons">
+                <button onClick={() => setCurrentDay(prevDay => new Date(prevDay.setDate(prevDay.getDate() - 1)))}>Poprzedni dzień</button>
+                <button onClick={() => setCurrentDay(prevDay => new Date(prevDay.setDate(prevDay.getDate() + 1)))}>Następny dzień</button>
+            </div>
             <h2>{currentDay.toLocaleDateString()}</h2>
             <table>
                 <thead>

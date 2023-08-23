@@ -15,30 +15,34 @@ function Header() {
         setDarkMode(prevMode => !prevMode);
     };
 
+    const handleSearchSubmit = (e) => {
+        e.preventDefault();
+        console.log('Searching for:', e.target.searchInput.value);
+    };
+
     return (
-        <header className="fixed-header">  {/* Dodajemy tutaj klasę */}
+        <header className="fixed-header">
             <div className="logo">
-                PlanIt   {/* Nazwa aplikacji */}
+                PlanIt
             </div>
             <nav>
                 <ul>
                     <li><a href="/">Strona główna</a></li>
                     <li><a href="/kontakt">Kontakt</a></li>
-                    {/* Możesz dodać więcej linków nawigacyjnych w przyszłości */}
                 </ul>
             </nav>
             <div className="search-bar">
-                <input type="text" placeholder="Wyszukaj..." />
+                <form onSubmit={handleSearchSubmit}>
+                    <input type="text" name="searchInput" placeholder="Wyszukaj..." />
+                    <button type="submit">Wyszukaj</button>
+                </form>
             </div>
             <div className="actions">
                 <button>Zaloguj się</button>
-                {/* Możesz dodać więcej przycisków akcji w przyszłości */}
             </div>
             <div className="user-info">
-                {/* Tutaj będzie wyświetlane imię użytkownika i avatar, jeśli jest zalogowany */}
             </div>
             <div className="theme-switcher">
-                {/* Przełącznik motywu */}
                 <label>
                     Jasny
                     <input type="checkbox" onChange={toggleTheme} checked={darkMode} />
