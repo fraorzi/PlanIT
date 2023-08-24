@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
-import TaskList from './components/TaskList';
+import TaskList from './components/Tasklist';
 import MealList from './components/MealList';
 import DayComponent from './components/Day';
 import Calendar from "./components/Calendar";

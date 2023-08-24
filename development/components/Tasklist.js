@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function TaskList({ active }) {
+function TaskList({ active, onTaskSelected, inModal = false }) {
     const [tasks, setTasks] = useState([]);
     const [taskInput, setTaskInput] = useState('');
     const [editIndex, setEditIndex] = useState(null);
@@ -45,10 +45,10 @@ function TaskList({ active }) {
             <button onClick={handleAddTask}>{editIndex !== null ? 'Zapisz zmiany' : 'Dodaj zadanie'}</button>
             <ul>
                 {tasks.map((task, index) => (
-                    <li key={index}>
+                    <li key={index} onClick={() => onTaskSelected(task)}>
                         {task}
-                        <button onClick={() => handleEditTask(index)}>Edytuj</button>
-                        <button onClick={() => handleDeleteTask(index)}>Usuń</button>
+                        {!inModal && <button onClick={() => handleEditTask(index)}>Edytuj</button>}
+                        {!inModal && <button onClick={() => handleDeleteTask(index)}>Usuń</button>}
                     </li>
                 ))}
             </ul>

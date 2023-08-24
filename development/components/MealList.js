@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function MealList({ active }) {
+function MealList({ active, onMealSelected, inModal = false }) {
     const [meals, setMeals] = useState([]);
     const [mealInput, setMealInput] = useState('');
     const [caloriesInput, setCaloriesInput] = useState('');
@@ -50,10 +50,10 @@ function MealList({ active }) {
             <button onClick={handleAddMeal}>{editIndex !== null ? 'Zapisz zmiany' : 'Dodaj posiłek'}</button>
             <ul>
                 {meals.map((meal, index) => (
-                    <li key={index}>
+                    <li key={index} onClick={() => onMealSelected(meal.name)}>
                         {meal.name} - {meal.calories} kcal
-                        <button onClick={() => handleEditMeal(index)}>Edytuj</button>
-                        <button onClick={() => handleDeleteMeal(index)}>Usuń</button>
+                        {!inModal && <button onClick={() => handleEditMeal(index)}>Edytuj</button>}
+                        {!inModal && <button onClick={() => handleDeleteMeal(index)}>Usuń</button>}
                     </li>
                 ))}
             </ul>

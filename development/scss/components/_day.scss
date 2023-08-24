@@ -79,3 +79,42 @@
     }
   }
 }
+.day-modal {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin-right: 0;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  margin-left: 850px;
+  margin-top: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.modal-buttons-container {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin-top: 20px;
+  margin-left: 500px;
+}
+
+.main-button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #8a2be2;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken(#8a2be2, 10%);
+  }
+}
+
+
