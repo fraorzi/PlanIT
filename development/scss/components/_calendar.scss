@@ -88,3 +88,43 @@
     }
   }
 }
+// ... (istniejący kod)
+
+.holiday-section {
+  margin-top: 20px;
+
+  h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin-bottom: 10px;
+  }
+
+  .add-holiday {
+    display: flex;
+    gap: 10px;
+
+    input {
+      flex: 1;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      padding: 5px 15px;
+      border: none;
+      background-color: #8a2be2;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken(#8a2be2, 10%);
+      }
+    }
+  }
+}
