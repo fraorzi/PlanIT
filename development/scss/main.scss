@@ -7,6 +7,7 @@
 @import "components/tasklist";
 @import "components/sidebar";
 @import "components/day";
+@import "components/calendar";
 
 body.light-mode {
   background-color: $light-background;
@@ -18,7 +19,7 @@ body.dark-mode {
   color: $dark-text;
 }
 .fixed-header {
-  color: #000;  // Tu możesz ustawić konkretny kolor dla tekstu w nagłówku
+  color: #000;
 }
 
 

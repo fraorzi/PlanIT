@@ -1,0 +1,58 @@
+.calendar-component {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  max-width: 1500px;
+  margin-left: 310px;
+  margin-top: 10px;
+
+  .calendar-header {
+    text-transform: capitalize;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    button {
+      padding: 5px 15px;
+      border: none;
+      background-color: #8a2be2;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken(#8a2be2, 10%);
+      }
+    }
+
+    span {
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+  }
+
+  .calendar-days {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+
+    .day {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: calc(100% / 7 - 10px); // Zmniejszamy o 10px, aby uwzględnić marginesy
+      height: 30px;
+      background-color: #e4e4e4;
+      border-radius: 3px;
+      font-weight: bold;
+      cursor: pointer;
+
+      &:hover {
+        background-color: lighten(#8a2be2, 30%);
+      }
+    }
+  }
+}
