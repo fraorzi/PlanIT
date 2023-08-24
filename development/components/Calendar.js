@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 
 function Calendar() {
     const [currentDate, setCurrentDate] = useState(new Date());
+    const [showNotes, setShowNotes] = useState(false);
+    const [notesData, setNotesData] = useState({}); // Nowy stan do przechowywania notatek dla każdego dnia
+    const [selectedDay, setSelectedDay] = useState(null);
 
     const daysInMonth = (date) => {
         return new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
@@ -17,6 +20,13 @@ function Calendar() {
 
     const days = generateDays();
 
+    const handleNoteChange = (e) => {
+        setNotesData(prevNotes => ({
+            ...prevNotes,
+            [selectedDay]: e.target.value
+        }));
+    };
+
     return (
         <div className="calendar-component">
             <div className="calendar-header">
@@ -30,8 +40,28 @@ function Calendar() {
             </div>
             <div className="calendar-days">
                 {days.map(day => (
-                    <span key={day} className="day">{day}</span>
+                    <span
+                        key={day}
+                        className={`day ${selectedDay === day ? "selected" : ""}`}
+                        onClick={() => setSelectedDay(day)}
+                    >
+                        {day}
+                    </span>
                 ))}
+            </div>
+            <div className="notes-section">
+                <button className="notes-toggle" onClick={() => setShowNotes(!showNotes)}>
+                    {showNotes ? "Ukryj notatki" : "Pokaż notatki"}
+                </button>
+                {showNotes && (
+                    <div className="notes-content">
+                        <textarea
+                            value={notesData[selectedDay] || ''}
+                            onChange={handleNoteChange}
+                            placeholder="Dodaj notatki tutaj..."
+                        />
+                    </div>
+                )}
             </div>
         </div>
     );

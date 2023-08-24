@@ -26,10 +26,12 @@ function App() {
         <div>
             <Header darkMode={darkMode} setDarkMode={setDarkMode} />
             <Sidebar onSectionToggle={(section) => {
-                if (section === 'calendar') {
-                    setActiveSection(prev => prev === 'calendar' ? "none" : 'calendar');
+                if (section === 'calendar' && activeSection !== 'calendar') {
+                    setActiveSection('calendar');
+                } else if (section === 'both' && activeSection !== 'both') {
+                    setActiveSection('both');
                 } else {
-                    setActiveSection(prev => prev === section ? "none" : section);
+                    setActiveSection('none');
                 }
             }} activeSection={activeSection} />
             {activeSection === "calendar" && <Calendar />}

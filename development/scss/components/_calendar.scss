@@ -6,6 +6,7 @@
   max-width: 1500px;
   margin-left: 310px;
   margin-top: 10px;
+  color: black;
 
   .calendar-header {
     text-transform: capitalize;
@@ -50,9 +51,40 @@
       font-weight: bold;
       cursor: pointer;
 
+      &.selected {
+        background-color: darken(#8a2be2, 10%);
+        color: white;
+      }
+
       &:hover {
         background-color: lighten(#8a2be2, 30%);
       }
+    }
+  }
+
+  .notes-section {
+    margin-top: 20px;
+
+    .notes-toggle {
+      padding: 5px 15px;
+      border: none;
+      background-color: #8a2be2;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken(#8a2be2, 10%);
+      }
+    }
+
+    .notes-content {
+      margin-top: 10px;
+      background-color: #e4e4e4;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
   }
 }
