@@ -34,7 +34,7 @@
 
   h2 {
     margin: 20px 0;
-    font-size: 28px;  /* Zwiększona wielkość czcionki */
+    font-size: 28px;
     font-weight: bold;
   }
 
@@ -50,7 +50,7 @@
         border: 1px solid #ccc;
 
         &:first-child {
-          width: 80px;  /* Stała szerokość dla komórki z godzinami */
+          width: 80px;
         }
       }
     }
@@ -115,6 +115,25 @@
   &:hover {
     background-color: darken(#8a2be2, 10%);
   }
+}
+.delete-holiday-btn {
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-radius: 50%;
+  margin-left: 10px;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+.task-container, .meal-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 
