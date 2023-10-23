@@ -45,7 +45,8 @@ function TaskList({ active, onTaskSelected, inModal = false }) {
             <button onClick={handleAddTask}>{editIndex !== null ? 'Zapisz zmiany' : 'Dodaj zadanie'}</button>
             <ul>
                 {tasks.map((task, index) => (
-                    <li key={index} onClick={() => onTaskSelected(task)}>
+                    
+                        <li key={index} onClick={() => { if (typeof onTaskSelected === 'function') onTaskSelected(task) }}>
                         {task}
                         {!inModal && <button onClick={() => handleEditTask(index)}>Edytuj</button>}
                         {!inModal && <button onClick={() => handleDeleteTask(index)}>Usuń</button>}

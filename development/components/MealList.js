@@ -50,7 +50,7 @@ function MealList({ active, onMealSelected, inModal = false }) {
             <button onClick={handleAddMeal}>{editIndex !== null ? 'Zapisz zmiany' : 'Dodaj posiłek'}</button>
             <ul>
                 {meals.map((meal, index) => (
-                    <li key={index} onClick={() => onMealSelected(meal.name)}>
+                    <li key={index} onClick={() => {if (typeof onMealSelected === 'function') onMealSelected(task) }}>
                         {meal.name} - {meal.calories} kcal
                         {!inModal && <button onClick={() => handleEditMeal(index)}>Edytuj</button>}
                         {!inModal && <button onClick={() => handleDeleteMeal(index)}>Usuń</button>}
